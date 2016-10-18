@@ -1148,8 +1148,8 @@ class XMLSecurityDSig
             $x509CertNode->SetAttribute("ValueType", "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3");
 
             $id = "key-" . sha1(base64_decode($X509Cert));
-            if (! empty($key_id_prefix_ns)) {
-                $x509CertNode->SetAttributeNS($key_id_prefix_ns, $key_id_prefix.":".$key_id_name, $id);
+            if (! empty($key_id_ns)) {
+                $x509CertNode->SetAttributeNS($key_id_ns, $key_id_pfx.":".$key_id_name, $id);
             } else {
                 $x509CertNode->SetAttribute($key_id_name, $id);
             }
